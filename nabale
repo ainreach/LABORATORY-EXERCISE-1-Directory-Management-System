@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+void showfiles() {
+     cout << "Files in Current Directory:\n";
+     cout << "file1.txt\nfiles2.cpp\nreport.doc\nimage.png\n;
+     cout << "Press Enter to continue ...\n";
+     cin.ignore().get();
+}
+
+void makeDirectory() {
+     cout << " Enter Directory name: ";
+     string dirName;
+     cin >> dirName;
+     cout << "Directory '" << dirName << "' create successfully!\n;
+     cout << " Press Enter to continue ...\n";
+     cin.ignore().get();
+}
+
+void switchDirectory() {
+     cout << " Enter Directory name to move into: ";
+     string dirName;
+     cin >>. dirName;
+     cout << " Current Directory: C :\\Users\\UserName\\" << dirName << "\n;
+     cout << " Press Enter to continue... \n";
+     cin.ignore().get();
+}
+
