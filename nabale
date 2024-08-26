@@ -1,58 +1,67 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-void showFiles() {
-     cout << "Files in Current Directory:\n";
-     cout << "file1.txt\nfiles2.cpp\nreport.doc\nimage.png\n";
-     cout << "Press Enter to continue ...\n";
-     cin.ignore().get();
+void displayMenu() {
+    cout << "MAIN MENU\n";
+    cout << "1. Show Files\n";
+    cout << "2. Make Directory\n";
+    cout << "3. Switch Directory\n";
+    cout << "4. Quit\n";
 }
 
-void makeDirectory() {
-     cout << " Enter Directory name: ";
-     string dirName;
-     cin >> dirName;
-     cout << "Directory '" << dirName << "' created successfully!\n";
-     cout << " Press Enter to continue ...\n";
-     cin.ignore().get();
+void showFiles(const string& currentDir) {
+    cout << "Files in Current Directory: " << currentDir << "\n";
+    cout << "file1.txt\nfiles2.cpp\nreport.doc\nimage.png\n";
+    cout << "Press Enter to continue ...\n";
+    cin.ignore().get();
 }
 
-void switchDirectory() {
-     cout << " Enter Directory name to move into: ";
-     string dirName;
-     cin >> dirName;
-     cout << " Current Directory: C:\\Users\\UserName\\" << dirName << "\n";
-     cout << " Press Enter to continue... \n";
-     cin.ignore().get();
+void makeDirectory(const string& currentDir) {
+    cout << "Enter Directory name: ";
+    string dirName;
+    cin >> dirName;
+    cout << "Directory '" << dirName << "' created successfully in " << currentDir << "!\n";
+    cout << "Press Enter to continue ...\n";
+    cin.ignore().get();
+}
+
+void switchDirectory(string& currentDir) {
+    cout << "Enter Directory name to move into: ";
+    string dirName;
+    cin >> dirName;
+    currentDir = "C:\\Users\\UserName\\" + dirName;
+    cout << "Current Directory: " << currentDir << "\n";
+    cout << "Press Enter to continue... \n";
+    cin.ignore().get();
 }
 
 int main() {
-   while (true) {
-        cout << "MAIN MENU\n";
-        cout << "1. Show Files\n";
-        cout << "2. Make Directory\n";
-        cout << "3. Switch Directory\n";
-        cout << "4. Quit\n";
+    string currentDir = "C:\\Users\\UserName\\";
+    int option;
+
+    while (true) {
+        displayMenu();
         cout << "Enter choice: ";
-        int option;
         cin >> option;
 
         switch (option) {
         case 1:
-           showFiles();
-           break;
+            showFiles(currentDir);
+            break;
         case 2:
-           makeDirectory();
-           break;
+            makeDirectory(currentDir);
+            break;
         case 3:
-           switchDirectory();
-           break;
+            switchDirectory(currentDir);
+            break;
         case 4:
-              return 0;
-         default:
-             cout << "Invalid choice! Try again.\n";
-        } 
-  }
+            return 0;
+        default:
+            cout << "Invalid choice! Try again.\n";
+        }
+    }
 }
