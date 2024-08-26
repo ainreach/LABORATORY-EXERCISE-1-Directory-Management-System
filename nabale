@@ -39,5 +39,16 @@ int main() {
         cout << "Enter choice: ";
         int option;
         cin >> option;
+
+  swtich (option) {
+        case 1:
+           showFiles();
+           break;
+        case 2:
+           makeDirectory
+           break;
+     } 
+
   }
+
 }
