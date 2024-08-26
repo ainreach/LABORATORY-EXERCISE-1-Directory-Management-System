@@ -1,12 +1,11 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
-void showfiles() {
+void showFiles() {
      cout << "Files in Current Directory:\n";
-     cout << "file1.txt\nfiles2.cpp\nreport.doc\nimage.png\n;
+     cout << "file1.txt\nfiles2.cpp\nreport.doc\nimage.png\n";
      cout << "Press Enter to continue ...\n";
      cin.ignore().get();
 }
@@ -15,7 +14,7 @@ void makeDirectory() {
      cout << " Enter Directory name: ";
      string dirName;
      cin >> dirName;
-     cout << "Directory '" << dirName << "' create successfully!\n;
+     cout << "Directory '" << dirName << "' created successfully!\n";
      cout << " Press Enter to continue ...\n";
      cin.ignore().get();
 }
@@ -23,8 +22,8 @@ void makeDirectory() {
 void switchDirectory() {
      cout << " Enter Directory name to move into: ";
      string dirName;
-     cin >>. dirName;
-     cout << " Current Directory: C:\\Users\\UserName\\" << dirName << "\n;
+     cin >> dirName;
+     cout << " Current Directory: C:\\Users\\UserName\\" << dirName << "\n";
      cout << " Press Enter to continue... \n";
      cin.ignore().get();
 }
@@ -40,15 +39,20 @@ int main() {
         int option;
         cin >> option;
 
-  swtich (option) {
+        switch (option) {
         case 1:
            showFiles();
            break;
         case 2:
-           makeDirectory
+           makeDirectory();
            break;
-     } 
-
+        case 3:
+           switchDirectory();
+           break;
+        case 4:
+              return 0;
+         default:
+             cout << "Invalid choice! Try again.\n";
+        } 
   }
-
 }
